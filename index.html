@@ -1,39 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <title>朝日清茶系统档案馆</title>
-    <style>
-        body {
-            font-family: Arial;
-            background: #f4f6f8;
-            text-align: center;
-            padding-top: 100px;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #666;
-            font-size: 18px;
-        }
-        .box {
-            background: white;
-            padding: 30px;
-            width: 300px;
-            margin: auto;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-    </style>
+<meta charset="UTF-8">
+<title>朝日清茶系统</title>
+
+<style>
+:root {
+  --bg: linear-gradient(135deg, #d4f5d2, #eafbea);
+  --text: #2f4f2f;
+  --card: white;
+  --primary: #66bb6a;
+}
+
+body.dark {
+  --bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  --text: #e8f5e9;
+  --card: rgba(255,255,255,0.08);
+  --primary: #81c784;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: var(--text);
+  transition: 0.5s ease;
+}
+
+header {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+.subtitle {
+  margin-top: 15px;
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+.card {
+  background: var(--card);
+  width: 85%;
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+.toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+</style>
 </head>
+
 <body>
-    <div class="box">
-        <h1>欢迎来到朝日清茶系统</h1>
-        <p>这里是系统日志与结构档案。</p>
-        <p>版本 1.0 正在构建中...</p>
-    </div>
+
+<div class="toggle">
+  <button onclick="toggleMode()">🌗 模式切换</button>
+</div>
+
+<header>
+  <h1>ZhiQuesystem 🌲</h1>
+  <div class="subtitle">档案馆</div>
+</header>
+
+<div class="card">
+  <h2>系统状态</h2>
+  <p>当前运行状态：上班中… 🌿</p>
+</div>
+
+<footer>
+  © 2026 栀雀系统 · 夜林模式可用 🌙
+</footer>
+
+<script>
+function toggleMode() {
+  document.body.classList.toggle("dark");
+}
+</script>
+
 </body>
 </html>
-
- 
